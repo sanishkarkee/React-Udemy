@@ -47,7 +47,7 @@ const ExpenseForm = (props) => {
       date: new Date(enteredDate),
     };
 
-    // yo function bata chai aba NewExpense.JS ma bhayeko same name ko function ma data pass huncha
+    //NEWEXPENSE.JS bata aako// yo function bata chai aba NewExpense.JS ma bhayeko same name ko function ma data pass huncha
     props.onSaveExpenseData(expenseData);
 
     // ---- Form submit bhaye pachi input field ko data lai clear garna use garicha ani <input> ma value attribute add garne ----
@@ -55,6 +55,9 @@ const ExpenseForm = (props) => {
     setEnteredAmount('');
     setEnteredDate('');
   };
+
+  // jastai euta component ma bhayeko function/handler lai directly arko component ma call garna milcha ki mildaina?
+  
 
   return (
     <form onSubmit={submitHandler}>
