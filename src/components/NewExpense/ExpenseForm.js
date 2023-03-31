@@ -57,7 +57,6 @@ const ExpenseForm = (props) => {
   };
 
   // jastai euta component ma bhayeko function/handler lai directly arko component ma call garna milcha ki mildaina?
-  
 
   return (
     <form onSubmit={submitHandler}>
