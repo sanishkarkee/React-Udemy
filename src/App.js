@@ -30,6 +30,8 @@ const App = () => {
     },
   ];
 
+  // yesma chai hamile child component(NewExpense.js)  data aako cha using HANDLER,,
+  // yesma chai 'id', 'title','amount', 'date' sabai data aako cha form ma input gareko jati
   const addExpenseHandler = (expense) => {
     console.log('In App.js');
     console.log(expense);
