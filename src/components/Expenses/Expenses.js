@@ -24,7 +24,7 @@ const Expenses = (props) => {
           onChangeFilter={filterChangeHandler}
         />
         {/*----DATA LAI MANUALLY EK EK  GARDAI DEKHAUNU BHANDA DYNAMICALLY DEKHAKO HO----*/}
-        {/* App.js ma bhayeko expenses array object ma bhayeko harek data lai <ExpenseItem/>  ma pass garcha ,yesma function ko arguement (expense) ma data pass huncha tei expense arguement lai milaune ho*/}
+        {/* App.js ma bhayeko expenses array object ma bhayeko harek data lai <ExpenseItem/>  ma pass garcha ,yesma function ko arguement  (expense) ma data pass huncha tei expense arguement lai milaune ho*/}
         {props.items.map((expense) => (
           <ExpenseItem
             title={expense.title}
