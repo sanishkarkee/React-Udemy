@@ -23,8 +23,8 @@ const Expenses = (props) => {
           selected={filteredYear} //dropdown ma default 2022 cha tara usestate('2020')cha default
           onChangeFilter={filterChangeHandler}
         />
-        {/*----DATA LAI MANUALLY EK EK  GARDAI DEKHAUNU BHANDA DYNAMICALLY DEKHAKO HO----*/}
-        {/* App.js ma bhayeko expenses array object ma bhayeko harek data lai <ExpenseItem/>  ma pass garcha ,yesma function ko arguement  (expense) ma data pass huncha tei expense arguement lai milaune ho*/}
+        {/*----DATA LAI MANUALLY EK EK GARDAI DEKHAUNU BHANDA DYNAMICALLY EKAI PALTA DISPLAY HO----*/}
+        {/* App.js ma bhayeko (expenses array object) ma bhayeko harek data lai <ExpenseItem/>  ma pass garcha ,yesma function ko arguement (expense) ma data pass huncha tei expense arguement lai milaune ho*/}
         {props.items.map((expense) => (
           <ExpenseItem
             title={expense.title}
@@ -33,6 +33,7 @@ const Expenses = (props) => {
           />
         ))}
 
+        {/*-------OLD WAY to display data-----*/}
         {/* <ExpenseItem
           title={props.items[0].title}
           amount={props.items[0].amount}
