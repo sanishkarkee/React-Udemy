@@ -27,6 +27,7 @@ const Expenses = (props) => {
         {/* App.js ma bhayeko (expenses array object) ma bhayeko harek data lai <ExpenseItem/>  ma pass garcha ,yesma function ko arguement (expense) ma data pass huncha tei expense arguement lai milaune ho*/}
         {props.items.map((expense) => (
           <ExpenseItem
+            key={expense.id}
             title={expense.title}
             amount={expense.amount}
             date={expense.date}
