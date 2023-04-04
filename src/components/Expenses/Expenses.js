@@ -16,6 +16,13 @@ const Expenses = (props) => {
     // console.log('We are in Expenses.js');
     // console.log(selectedYear);
   };
+
+  //------------FILTERING ITEMS ON THE BASIS OF SELECTION OF YEAR
+  // console.log(props.items);  // container (id,title,amount,date) of all expense items
+  const filteredExpenses = props.items.filter((expense) => {
+    return expense.date.getFullYear().toString() === filteredYear;
+  });
+
   return (
     <div>
       <Card className='expenses'>
@@ -23,9 +30,12 @@ const Expenses = (props) => {
           selected={filteredYear} //dropdown ma default 2022 cha tara usestate('2020')cha default
           onChangeFilter={filterChangeHandler}
         />
-        {/*----DATA LAI MANUALLY EK EK GARDAI DEKHAUNU BHANDA DYNAMICALLY EKAI PALTA DISPLAY HO----*/}
+        {/*-----------DATA LAI MANUALLY EK EK GARDAI DEKHAUNU BHANDA DYNAMICALLY EKAI PALTA DISPLAY HO----*/}
         {/* App.js ma bhayeko (expenses array object) ma bhayeko harek data lai <ExpenseItem/>  ma pass garcha ,yesma function ko arguement (expense) ma data pass huncha tei expense arguement lai milaune ho*/}
-        {props.items.map((expense) => (
+        {/* ---------- YESMA 2TA KAAM BHAKO CHA
+        1) data lai dynamically ekai palta MAP() use garera dekhako cha=> "{props.items.map((expense) => ()"
+        2) selected year ko aadhar ma expense item dekhako cha => "{filteredExpenses.map((expense) => ("*/}
+        {filteredExpenses.map((expense) => (
           <ExpenseItem
             key={expense.id}
             title={expense.title}
