@@ -29,8 +29,8 @@ const DUMMY_EXPENSES = [
   },
   {
     id: 'e4',
-    title: 'New Desk (Wooden)',
-    amount: 450,
+    title: 'Google Pixel',
+    amount: 486,
     date: new Date(2019, 5, 12),
   },
 ];
@@ -43,9 +43,9 @@ const App = () => {
 
   const addExpenseHandler = (expense) => {
     // console.log('In App.js');
-    // console.log(expense);
-
+    // console.log(expense, 'this is in App.js(addExpenseHandler)');
     setExpenses((prevExpenses) => {
+      // console.log([...prevExpenses], 'This is old data');
       return [expense, ...prevExpenses];
     });
 

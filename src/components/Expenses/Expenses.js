@@ -12,15 +12,16 @@ const Expenses = (props) => {
 
   // filterChangeHandler handler chai child component(ExpenseFilter) bata data pull garna lai use gareko ho
   const filterChangeHandler = (selectedYear) => {
-    setFilteredYear(selectedYear); //yo chai state ma data store gareko ho
+    setFilteredYear(selectedYear, 'This data are after filtering'); //yo chai state ma data store gareko ho
     // console.log('We are in Expenses.js');
     // console.log(selectedYear);
   };
 
-  //------------FILTERING ITEMS ON THE BASIS OF SELECTION OF YEAR
-  // console.log(props.items);  // container (id,title,amount,date) of all expense items
+  //------------(Video 65/assignment 3)---FILTERING ITEMS ON THE BASIS OF SELECTION OF YEAR
+  console.log(props.items, 'This is for filtered items'); // container (id,title,amount,date) of all expense items
   const filteredExpenses = props.items.filter((expense) => {
     return expense.date.getFullYear().toString() === filteredYear;
+    // expense.date.getFullYear().toString() >> yesle chai sabai expense data haru ko year collect garcha
   });
 
   return (
@@ -43,18 +44,6 @@ const Expenses = (props) => {
             date={expense.date}
           />
         ))}
-
-        {/*-------OLD WAY to display data-----*/}
-        {/* <ExpenseItem
-          title={props.items[0].title}
-          amount={props.items[0].amount}
-          date={props.items[0].date}
-        />
-        <ExpenseItem
-          title={props.items[1].title}
-          amount={props.items[1].amount}
-          date={props.items[1].date}
-        /> */}
       </Card>
     </div>
   );
