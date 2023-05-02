@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Card from '../UI/Card';
-import ExpenseItem from './ExpenseItem';
 import './Expenses.css';
 import ExpensesFilter from './ExpensesFilter';
+import ExpensesList from './ExpensesList';
 
 // NOTE: Expensefilter.js bata data lai Expense.js ma lyaim aba chai tyo aako data lai chai state ma save garnu parcha, so use state use gareko ho
 
@@ -24,6 +24,11 @@ const Expenses = (props) => {
     // expense.date.getFullYear().toString() >> yesle chai sabai expense data haru ko year collect garcha
   });
 
+  console.log(filteredExpenses.length); //selected year ma kati ota data cha tyo determine garcha
+
+  // -----CONDITIONAL OUTPUT 2 ----
+  // (--code is moved to new component=> ExpensesList.js--)
+
   return (
     <div>
       <Card className='expenses'>
@@ -36,14 +41,19 @@ const Expenses = (props) => {
         {/* ---------- YESMA 2TA KAAM BHAKO CHA
         1) data lai dynamically ekai palta MAP() use garera dekhako cha=> "{props.items.map((expense) => ()"
         2) selected year ko aadhar ma expense item dekhako cha => "{filteredExpenses.map((expense) => ("*/}
-        {filteredExpenses.map((expense) => (
-          <ExpenseItem
-            key={expense.id}
-            title={expense.title}
-            amount={expense.amount}
-            date={expense.date}
-          />
-        ))}
+
+        {/* -----CONDITIONAL OUTPUT 1----{filteredExpenses.length === 0 && <p>No expense found.</p>}
+        {filteredExpenses.length > 0 &&
+          filteredExpenses.map((expense) => (
+            <ExpenseItem
+              key={expense.id}
+              title={expense.title}
+              amount={expense.amount}
+              date={expense.date}
+            />
+          ))} */}
+
+        <ExpensesList items={filteredExpenses}></ExpensesList>
       </Card>
     </div>
   );

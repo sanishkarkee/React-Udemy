@@ -31,7 +31,7 @@ const DUMMY_EXPENSES = [
     id: 'e4',
     title: 'Google Pixel',
     amount: 486,
-    date: new Date(2019, 5, 12),
+    date: new Date(2020, 5, 12),
   },
 ];
 
