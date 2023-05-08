@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Card from '../UI/Card';
 import './Expenses.css';
+import ExpensesChart from './ExpensesChart';
 import ExpensesFilter from './ExpensesFilter';
 import ExpensesList from './ExpensesList';
 
@@ -42,7 +43,8 @@ const Expenses = (props) => {
         1) data lai dynamically ekai palta MAP() use garera dekhako cha=> "{props.items.map((expense) => ()"
         2) selected year ko aadhar ma expense item dekhako cha => "{filteredExpenses.map((expense) => ("*/}
 
-        {/* -----CONDITIONAL OUTPUT 1----{filteredExpenses.length === 0 && <p>No expense found.</p>}
+        {/* -----CONDITIONAL OUTPUT 1----
+        {filteredExpenses.length === 0 && <p>No expense found.</p>}
         {filteredExpenses.length > 0 &&
           filteredExpenses.map((expense) => (
             <ExpenseItem
@@ -52,6 +54,8 @@ const Expenses = (props) => {
               date={expense.date}
             />
           ))} */}
+
+        <ExpensesChart expenses={filteredExpenses}></ExpensesChart>
 
         <ExpensesList items={filteredExpenses}></ExpensesList>
       </Card>
