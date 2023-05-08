@@ -43,7 +43,7 @@ const ExpenseForm = (props) => {
     //---- data lai object ko rupp ma server ma pathako ho
     const expenseData = {
       title: enteredTitle, // A:B -> A ko name j rakhda ni huncha, B ko name chai mathi banako state variable ko name huncha
-      amount: enteredAmount,
+      amount: +enteredAmount,
       date: new Date(enteredDate),
     };
 

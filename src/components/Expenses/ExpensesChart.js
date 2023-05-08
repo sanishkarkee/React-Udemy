@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Chart from '../Chart/Chart';
 
 const ExpensesChart = (props) => {
@@ -18,8 +17,11 @@ const ExpensesChart = (props) => {
     { label: 'Dec', value: 0 },
   ];
 
+  //console.log(props.expenses, 'This is from props.expenses');
+
+  //---Selected year ko list haru display huncha
   for (const expense of props.expenses) {
-    const expenseMonth = expense.date.getMonth(); // starting at 0 => January => 0
+    const expenseMonth = expense.date.getMonth(); // (starting at 0 => January => 0) , SELECTED YEAR KO LIST HARU BATA MONTHS LINCHA
     chartDataPoints[expenseMonth].value += expense.amount;
   }
 

@@ -5,8 +5,14 @@ import ChartBar from './ChartBar';
 const Chart = (props) => {
   const datapointValues = props.dataPoints.map(
     (dataPoint) => dataPoint.value
-  ); //object to number transform gareko ho , yesle chai array of numbers return garcha
-  const totalMaximum = Math.max(...datapointValues); //arrays of number bata yesle maximum number select garcha, ... le     garda chai aba max le 12 ota arguments receive garcha
+  ); //object to number transform gareko ho , yesle chai array of numbers return garcha,,,, YESMA CHAI SELECTED YEAR MA BHAKO ITEMS HARU KO MONTHS MA KATI AMOUNT/PRICE CHA TYO DISPLAY HUNCHA
+
+  console.log(datapointValues, 'This is from dataPointValues');
+
+  const totalMaximum = Math.max(...datapointValues); //ARRAYS OF NUMBER BATA YESLE MAXIMUM AMOUNT/PRICE SELECT GARCHA, ... le garda chai aba max le 12 ota arguments receive garcha
+
+  console.log(totalMaximum, 'This is from totalMaximum');
+
   return (
     <div className='chart'>
       {props.dataPoints.map((dataPoint) => (
